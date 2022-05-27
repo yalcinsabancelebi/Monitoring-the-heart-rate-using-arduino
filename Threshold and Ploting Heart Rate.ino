@@ -1,14 +1,3 @@
-
-/*  Getting_BPM_to_Monitor prints the BPM to the Serial Monitor, using the least lines of code and PulseSensor Library.
- *  Tutorial Webpage: https://pulsesensor.com/pages/getting-advanced
- *
---------Use This Sketch To------------------------------------------
-1) Displays user's live and changing BPM, Beats Per Minute, in Arduino's native Serial Monitor.
-2) Print: "♥  A HeartBeat Happened !" when a beat is detected, live.
-2) Learn about using a PulseSensor Library "Object".
-4) Blinks LED on PIN 13 with user's Heartbeat.
---------------------------------------------------------------------*/
-
 #define USE_ARDUINO_INTERRUPTS true    // Set-up low-level interrupts for most acurate BPM math.
 #include <PulseSensorPlayground.h>     // Includes the PulseSensorPlayground Library.   
 
@@ -53,5 +42,3 @@ if (pulseSensor.sawStartOfBeat()) {            // Constantly test to see if "a b
   delay(20);                    // considered best practice in a simple sketch.
 
 }
-
-  
