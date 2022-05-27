@@ -4,7 +4,7 @@ Monitoring the heart rate using Arduino and pulse sensor and LCD display.
 ### Info
 
 - [Click here](https://create.arduino.cc/projecthub/mikroi-lemciler-proje/nabiz-olcer-34124b) for circuit wiring diagram and full description on Arduino
-- This project was developed with @onurdemiralay
+- This project was developed with [@onurdemiralay](https://github.com/onurdemiralay)
 
 # Steps
 
