@@ -1,26 +1,26 @@
-#define USE_ARDUINO_INTERRUPTS true    // bpm i doğru ölçmek için kesintiler
-#include <PulseSensorPlayground.h>     // PulseSensorPlayground kütüpanesi eklendi   
-#include <Wire.h> //LCD Ekranımızı kullanabilmek için kütüphane tanımlaması yapıyoruz
-#include <LiquidCrystal_I2C.h> //LCD Ekranımızı kullanabilmek için kütüphane tanımlaması yapıyoruz
+#define USE_ARDUINO_INTERRUPTS true    // bpm i doru lmek iin kesintiler
+#include <PulseSensorPlayground.h>     // PulseSensorPlayground ktpanesi eklendi   
+#include <Wire.h> //LCD Ekranmz kullanabilmek iin ktphane tanmlamas yapyoruz
+#include <LiquidCrystal_I2C.h> //LCD Ekranmz kullanabilmek iin ktphane tanmlamas yapyoruz
 
 const int PulseWire = 0; 
-int Threshold = 515;           // sensörde algılanacak vuruş eşik değeri
+int Threshold = 515;           // sensrde alglanacak vuru eik deeri
 
-LiquidCrystal_I2C lcd(0x27, 16, 2);//LCD Ekranımızın I2C adresinin "0x27" olduğunu ve 2 satır 16 sütundan oluştuğunu tanımlıyoruz
+LiquidCrystal_I2C lcd(0x27, 16, 2);//LCD Ekranmzn I2C adresinin "0x27" olduunu ve 2 satr 16 stundan olutuunu tanmlyoruz
                                
-PulseSensorPlayground pulseSensor;  // instance aldık
+PulseSensorPlayground pulseSensor;  // instance aldk
 
 void setup() {   
-  lcd.begin(); //LCD Ekranımızın 2 satır ve 16 sütundan oluştuğunu tanımlıyoruz
-  Serial.begin(9600);          // seri iletişim başlatıldı
+  lcd.begin(); //LCD Ekranmzn 2 satr ve 16 stundan olutuunu tanmlyoruz
+  Serial.begin(9600);          // seri iletiim balatld
 
-  // pulsesensör değişken atamaları
+  // pulsesensr deiken atamalar
   pulseSensor.analogInput(PulseWire);   
   pulseSensor.setThreshold(Threshold);   
 
-  // pulsesensör nesnesinin oluştuğunu ve sinyal göndermeye başladığını yazdırdık
+  // pulsesensr nesnesinin olutuunu ve sinyal gndermeye baladn yazdrdk
    if (pulseSensor.begin()) {
-    Serial.println("Nabız Olcer Nesnesi Olustu!");   
+    Serial.println("Nabz Olcer Nesnesi Olustu!");   
   }
 }
 
@@ -28,19 +28,19 @@ void setup() {
 
 void loop() {
 
- int myBPM = pulseSensor.getBeatsPerMinute();  // pulsesensörden gelen bpm i döngü içinde myBPM e atadık
-                                               // her atımda MyBPM değişiyor.
+ int myBPM = pulseSensor.getBeatsPerMinute();  // pulsesensrden gelen bpm i dng iinde myBPM e atadk
+                                               // her atmda MyBPM deiiyor.
 
-if (pulseSensor.sawStartOfBeat()) {            // pulsesensörde atım olup olmadığını kontrol ediyoruz
- Serial.println("♥  Kalp Atışı Algılandı!"); // eğer atım okunuyorsa "kalp atışı algılandı !" yazacak
- Serial.print("BPM: ");                        // "BPM" ifadesi ekrana yazdır.
- Serial.println(myBPM);                        // BPM değerini ekrana yazdır.
+if (pulseSensor.sawStartOfBeat()) {            // pulsesensrde atm olup olmadn kontrol ediyoruz
+ Serial.println("  Kalp At Algland!"); // eer atm okunuyorsa "kalp at algland !" yazacak
+ Serial.print("BPM: ");                        // "BPM" ifadesi ekrana yazdr.
+ Serial.println(myBPM);                        // BPM deerini ekrana yazdr.
  lcd.clear();
  lcd.setCursor(0,0);
- lcd.print("BPM: ");                        // "BPM" ifadesi ekrana yazdır.
- lcd.print(myBPM);                        // BPM değerini ekrana yazdır.
+ lcd.print("BPM: ");                        // "BPM" ifadesi ekrana yazdr.
+ lcd.print(myBPM);                        // BPM deerini ekrana yazdr.
 }
 
-  delay(20);                    // tüm bu işlemlerden sonra 20 milisaniye beklet
+  delay(20);                    // tm bu ilemlerden sonra 20 milisaniye beklet
 
 }
