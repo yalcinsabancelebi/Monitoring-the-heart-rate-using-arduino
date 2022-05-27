@@ -8,16 +8,14 @@ Monitoring the heart rate using Arduino and pulse sensor and LCD display.
 
 # Steps
 
-- Firstly, upload and check [treshold](https://create.arduino.cc/projecthub/mikroi-lemciler-proje/nabiz-olcer-34124b) stack on arduino uno with IDE.
+- Firstly, upload and check [treshold] (https://user-images.githubusercontent.com/75809015/170716736-be92a892-1567-4035-8c3a-aff9f6740720.png) stack on arduino uno with IDE.
+
 - Then monitor the heartbeats above a certain value according to the heart rate and set this value as the threshold value as in the picture
 ![](https://pandao.github.io/editor.md/examples/images/4.jpg)
 > Treshold value
 
 - Set this threshold to int threshold in the [pulsemeter.ino](https://github.com/yalcinsabancelebi/Monitoring-the-heart-rate-using-arduino/blob/main/pulsemeter.ino) stack and run code.
 
-
-
-
-![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+![](https://pandao.github.io/editor.md/examples/images/4.jpg](https://user-images.githubusercontent.com/75809015/170716847-6f087f27-5722-4558-a5b6-38e52e911c16.png)
 > Circuit Diagram
 
