@@ -1,4 +1,4 @@
-#define USE_ARDUINO_INTERRUPTS true    // bpm i doru lmek iin kesintiler
+#define USE_ARDUINO_INTERRUPTS true    // bpm i doru lmek icin kesintiler
 #include <PulseSensorPlayground.h>     // PulseSensorPlayground ktpanesi eklendi   
 #include <Wire.h> //LCD Ekranmz kullanabilmek iin ktphane tanmlamas yapyoruz
 #include <LiquidCrystal_I2C.h> //LCD Ekranmz kullanabilmek iin ktphane tanmlamas yapyoruz
